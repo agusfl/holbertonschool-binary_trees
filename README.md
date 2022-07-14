@@ -10,7 +10,7 @@
 * What is a **complete**, a **full**, a **perfect**, a balanced ``binary tree``
 
 ## Environment 
-* Language: C
+* Language C
 * Operating System: Ubuntu 20.04 LTS
 * Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 * Compiler: gcc 
