@@ -13,7 +13,7 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 	/* Check if tree or func are NULL */
 	if (tree == NULL || func == NULL)
 	{
-		return; /* Base case for recursion */
+		return; /* Base case for exit recursion */
 	}
 
 	/* Call func with the data value of tree (parameter 'n' of the struct) */
