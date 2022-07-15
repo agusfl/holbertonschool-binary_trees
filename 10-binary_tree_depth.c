@@ -1,13 +1,22 @@
 #include "binary_trees.h"
 
 /**
-* DescripcionFun - Integer stored in the node
-* @parametro: Pointer to the parent node
-* @parametro: Pointer to the left child node
-* Return: description
+* binary_tree_depth - funcion que mida la profundidad de un nodo en un árbol
+* @tree: puntero al nodo a medir profundidad
+* Return: num of depth of the node or 0.
 */
 
-size_t binary_tree_size(const binary_tree_t *tree)
+size_t binary_tree_depth(const binary_tree_t *tree)
 {
+	size_t prof = 0;
 
+	/* Caso base para salir de la recursividad */
+	if (tree == NULL)
+		return (0);
+
+	if (tree->parent)
+		prof = 1 + binary_tree_depth(tree->parent);
+
+	/*si es 0 return 0, y sino el núm de profundidades contado*/
+	return (prof);
 }
