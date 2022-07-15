@@ -1,13 +1,21 @@
 #include "binary_trees.h"
 
 /**
-* DescripcionFun - Integer stored in the node
-* @parametro: Pointer to the parent node
-* @parametro: Pointer to the left child node
-* Return: description
+* binary_tree_is_leaf - Checks if a node is a leaf
+* @node: Pointer to the node to check
+* Return: 1 if node is a leaf, otherwise 0
 */
 
 int binary_tree_is_leaf(const binary_tree_t *node)
 {
 
+	if (node->left == NULL && node->right == NULL && node != NULL)
+	{
+		return (1);
+		/**
+		 * A node is a leaf node if both left and right child nodes of it are
+		 * NULL.
+		 */
+	}
+	return (0); /* If the node argument is NULL return 0 */
 }
