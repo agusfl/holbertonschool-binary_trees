@@ -14,7 +14,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	/*Cada vez que pueda ir hacía arriba en la arbol sumo 1*/ 
+	/*Cada vez que pueda ir hacía arriba en la arbol sumo 1*/
 	if (tree->parent)
 		prof = 1 + binary_tree_depth(tree->parent);
 
