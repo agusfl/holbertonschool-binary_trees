@@ -10,11 +10,11 @@ size_t binary_tree_size(const binary_tree_t *tree)
 {
 	size_t size = 0;
 
-	/*condicion de finalización de la recursión*/
+	/*Condicion de finalización de la recursión*/
 	if (!tree)
 		return (0);
 
-	/*puedo verlo como medir la altura de ambos lados y sumar*/
+	/*Puedo verlo como medir la altura de ambos lados y sumar*/
 	size =  (binary_tree_size(tree->left) + binary_tree_size(tree->right)) + 1;
 
 	return (size);
