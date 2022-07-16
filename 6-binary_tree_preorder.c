@@ -2,7 +2,8 @@
 
 /**
 * binary_tree_preorder - Function that goes through a binary tree using
-* pre-order traversal (first traverse left side and then right side).
+* pre-order traversal (first visit root and then traverse left side, and for
+* last right side).
 * @tree: Pointer to the root node of the tree to traverse
 * @func: Is a pointer to a function to call for each node.
 * The value in the node must be passed as a parameter to this function.
