@@ -1,23 +1,24 @@
 #include "binary_trees.h"
 
 /**
-* binary_tree_leaves - Contar la cantidad de hojas en binary tree
+* binary_tree_leaves - Counts the leaves in a binary tree, leaves are nodes
+* with no children
 * @tree: Pointer to the parent node
-* Return: description
+* Return: Number of leaves, if the tree is NULL return 0
 */
 
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
-	size_t h = 0;
+	size_t leaves = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	/*retorno  cuando encuentro una hoja*/
+	/* Condicion para que un nodo sea un leaf (hoja) - no children */
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
 
-	/*despúes de tener ambos retornos(hojas) las sumo y retorno*/
-	h = binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right);
-	return (h);
+	/* Sumamos los retornos que hayan dado 1 por ser una hoja */
+	leaves = binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right);
+	return (leaves);
 }
