@@ -8,7 +8,7 @@
 
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	size_t prof = 0;
+	size_t depth = 0;
 
 	/* Caso base para salir de la recursividad */
 	if (tree == NULL)
@@ -16,8 +16,8 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 
 	/*Cada vez que pueda ir hacía arriba en la arbol sumo 1*/
 	if (tree->parent)
-		prof = 1 + binary_tree_depth(tree->parent);
+		depth = 1 + binary_tree_depth(tree->parent);
 
 	/*Si es 0 return 0, y sino el núm de profundidades obtenido*/
-	return (prof);
+	return (depth);
 }
