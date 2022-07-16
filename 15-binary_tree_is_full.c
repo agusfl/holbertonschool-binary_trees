@@ -1,8 +1,6 @@
 #include "binary_trees.h"
 #include "binary_trees.h"
 
-#include "binary_trees.h"
-
 /**
 * binary_tree_size - funcion para medir el tamaño de un arbol binario
 * el size de un arbol es la suma de todos los nodos
