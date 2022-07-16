@@ -1,46 +1,47 @@
 #include "binary_trees.h"
-#include "binary_trees.h"
 
 /**
-* binary_tree_size - funcion para medir el tamaño de un arbol binario
-* el size de un arbol es la suma de todos los nodos
-* @tree: puntero a nodo(root) del arbol a medir el tamaño.
-* Return: Tamaño del arbol o 0 si el arbol es NULL
-*/
-
-size_t binary_tree_size(const binary_tree_t *tree)
-{
-	size_t size = 0;
-
-	/*Condicion de finalización de la recursión*/
-	if (tree == NULL)
-		return (0);
-
-	/*Sumamos lado izq + lado der + 1 por el root asi sumamos todos los nodos*/
-	size =  (binary_tree_size(tree->left) + binary_tree_size(tree->right)) + 1;
-
-	return (size);
-}
-
-
-/**
-* binary_tree_is_full - check if a binary tree is full
-* @tree: puntero al nodo(root) del arbol binario a analizaar
+* binary_tree_is_full - check if a binary tree is full.
+* A full Binary tree is a special type of binary tree in which every parent
+* node/internal node has either two or no children.
+* @tree: pointer to the root node of the tree to check
 * Return: tree is NULL return 0, or 1 if is full
 */
 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
-	size_t left_height = 0, right_height = 0;
+	int left_side = 0, right_side = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	left_height = binary_tree_size(tree->left);
-	right_height = binary_tree_size(tree->right);
-	/*si el size de ambos extremos son iguales is FULL*/
-	if (left_height == right_height)
+	/* Si no tiene hijos cumple con la condicion de ser un full binary tree */
+	if (tree->left == NULL && tree->right == NULL)
+	{
 		return (1);
+	}
+	/* Si el nodo tiene SOLO un hijo NO es un full binary tree */
+	if (tree->left != NULL && tree->right == NULL)
+	{
+		return (0);
+	}
+	/* Si el nodo tiene SOLO un hijo NO es un full binary tree */
+	if (tree->left == NULL && tree->right != NULL)
+	{
+		return (0);
+	}
 
-	return (0);
+	/* Llamamos a funcion que estamos creando de manera recursiva */
+	left_side = binary_tree_is_full(tree->left);
+	right_side = binary_tree_is_full(tree->right);
+
+	/**
+	 * Si tanto las variables left_side como right_side retornaron 1 signfica
+	 * el nodo tiene DOS hijos, por lo tanto cumple la condicion de ser un full
+	 * binary tree, por eso retornamos 1 y de lo contrario se retorna 0
+	 */
+	if (left_side == 1 && right_side == 1)
+		return (1);
+	else
+		return (0);
 }
