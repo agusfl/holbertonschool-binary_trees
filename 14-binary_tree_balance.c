@@ -13,10 +13,13 @@ int binary_tree_balance(const binary_tree_t *tree)
 		return (0);
 
 	if (tree->left == NULL && tree->right == NULL)
+		return (0);
 	/*debo comparar las alturas para saber si esta equilibrado*/
 	left_height = 1 + binary_tree_balance(tree->left);
 	right_height = 1 + binary_tree_balance(tree->right);
 
-	/*resto la 2 alturas para obtener el balance*/
-	return (left_height - right_height);
+	if (left_height == right_height)
+		return (left_height);
+	else
+		return (left_height - right_height); /*resto la 2 alturas para obtener el balance*/
 }
