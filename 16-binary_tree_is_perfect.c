@@ -21,48 +21,27 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	return (size);
 }
 
-
-/**
-* binary_tree_depth - funcion que mida la profundidad de un nodo en un árbol
-* @tree: puntero al nodo a medir profundidad
-* Return: num of depth of the node or 0.
-*/
-
-size_t binary_tree_depth(const binary_tree_t *tree)
-{
-	size_t depth = 0;
-
-	/* Caso base para salir de la recursividad */
-	if (tree == NULL)
-		return (0);
-
-	/*Cada vez que pueda ir hacía arriba en la arbol sumo 1*/
-	if (tree->parent)
-		depth = 1 + binary_tree_depth(tree->parent);
-
-	/*Si es 0 return 0, y sino el núm de profundidades obtenido*/
-	return (depth);
-}
-
 /**
 * int binary_tree_is_perfect - check is a binary tree is perfect
-* @tree: puntero al nodo(root) del arbol binario a analizaar
-* Return: if tree is NULL, return 0, return 1 if is perfect
+* A perfect binary tree is a type of binary tree in which every internal node
+* has exactly two child nodes and all the leaf nodes are at the same level.
+* @tree: pointer to the root node of the tree to check
+* Return: if tree is NULL return 0, return 1 if is perfect
 */
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	size_t left_height = 0, right_height = 0;
+	int left_side = 0, right_side = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	/*obtenemos la profundidad del arbol binario desde root*/
-	left_height = binary_tree_size(tree->left);
-	right_height = binary_tree_size(tree->right);
+	/* Obtenemos la profundidad del arbol binario desde root */
+	left_side = binary_tree_size(tree->left);
+	right_side = binary_tree_size(tree->right);
 
-	/*todas las hojas tinen que estar en la profundidad 2*/
-	if (left_height == right_height)
+	/* Tiene que haber la misma cantidad de nodos en los dos lados */
+	if (left_side == right_side)
 		return (1);
 
 	return (0);
