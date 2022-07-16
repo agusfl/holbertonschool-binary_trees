@@ -3,7 +3,7 @@
 /**
 * binary_tree_nodes - contar el numero de nodos que tienen hijos
 * @tree: puntero al nodo(root) del arbol
-* Return: number of nodes or 0 
+* Return: number of nodes or 0
 */
 
 size_t binary_tree_nodes(const binary_tree_t *tree)
@@ -15,13 +15,10 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 
 	/*compruebo que siga teniendo hijos para sumar*/
 	/*si los tiene sigo acumulando nodos padres*/
-	if (tree->left != NULL && tree->right != NULL)
-		p_nodes = (binary_tree_nodes(tree->left) + binary_tree_nodes(tree->left)) + 1;
+	if (tree->left != NULL || tree->right != NULL)
+		p_nodes = (binary_tree_nodes(tree->left) + binary_tree_nodes(tree->right)) + 1;
 
-	return p_nodes;
+	/*sumo el conteo de ambos exteriores del arbol*/
+	/* p_nodes = binary_tree_nodes(tree->left) + binary_tree_nodes(tree->right);*/
+	return (p_nodes);
 }
-
-
-//   .-------(098)--.
-// (012)--.       (128)--.
-//      (054)          (402)
