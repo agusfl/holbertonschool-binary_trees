@@ -8,16 +8,20 @@
 
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t nodes = 0;
+	size_t p_nodes = 0;
 
 	if (tree == NULL)
 		return (0);
 
+	/*compruebo que siga teniendo hijos para sumar*/
+	/*si los tiene sigo acumulando nodos padres*/
 	if (tree->left != NULL && tree->right != NULL)
-		nodes = 
+		p_nodes = (binary_tree_nodes(tree->left) + binary_tree_nodes(tree->left)) + 1;
+
+	return p_nodes;
 }
 
 
-  .-------(098)--.
-(012)--.       (128)--.
-     (054)          (402)
+//   .-------(098)--.
+// (012)--.       (128)--.
+//      (054)          (402)
