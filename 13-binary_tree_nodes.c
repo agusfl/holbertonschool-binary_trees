@@ -13,12 +13,13 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	/*compruebo que siga teniendo hijos para sumar*/
-	/*si los tiene sigo acumulando nodos padres*/
+	/**
+	 * Compruebo que siga teniendo hijos para sumar si los tiene sumo los nodos
+	 * usando recursividad.
+	 */
 	if (tree->left != NULL || tree->right != NULL)
-		p_nodes = (binary_tree_nodes(tree->left) + binary_tree_nodes(tree->right)) + 1;
+		p_nodes = (binary_tree_nodes(tree->left) + binary_tree_nodes(tree->right))
+		+ 1; /* tiramos el uno para abajo por betty */
 
-	/*sumo el conteo de ambos exteriores del arbol*/
-	/* p_nodes = binary_tree_nodes(tree->left) + binary_tree_nodes(tree->right);*/
 	return (p_nodes);
 }
