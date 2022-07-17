@@ -22,7 +22,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
 }
 
 /**
-* int binary_tree_is_perfect - check is a binary tree is perfect
+* binary_tree_is_perfect - check is a binary tree is perfect
 * A perfect binary tree is a type of binary tree in which every internal node
 * has exactly two child nodes and all the leaf nodes are at the same level.
 * @tree: pointer to the root node of the tree to check
