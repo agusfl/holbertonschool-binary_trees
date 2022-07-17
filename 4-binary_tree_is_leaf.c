@@ -9,13 +9,11 @@
 int binary_tree_is_leaf(const binary_tree_t *node)
 {
 
-	if (node->left == NULL && node->right == NULL)
-	{
+	if (node != NULL && node->left == NULL && node->right == NULL)
 		return (1);
 		/**
 		 * A node is a leaf node if both left and right child nodes of it are
 		 * NULL.
 		 */
-	}
 	return (0); /* If the node argument is NULL return 0 */
 }
