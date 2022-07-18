@@ -9,5 +9,6 @@
 
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree)
 {
-
+	printf("%d", tree->n);
+	return (NULL);
 }
