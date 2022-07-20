@@ -76,5 +76,6 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
 /* Print Tree */
 void binary_tree_print(const binary_tree_t *);
+void current_level(const binary_tree_t *tree, void (*func)(int), size_t level);
 
 #endif
